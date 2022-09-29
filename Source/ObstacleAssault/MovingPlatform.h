@@ -23,20 +23,33 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	FVector MoveAPlatform(FVector CurrLocation);
+	// FVector MoveAPlatform(FVector CurrLocation);
 
-	UPROPERTY(EditAnywhere)
-	double Bound = 100.0;
+	// UPROPERTY(EditAnywhere)
+	// double Bound = 100.0;
 
-	UPROPERTY(EditAnywhere)
-	FVector MyVector;
+	// UPROPERTY(EditAnywhere)
+	// FVector MyVector;
 
 	UPROPERTY(EditAnywhere)
 	// 0: forward, 1: backward
 	int32 Direction = 1;
 
+	// UPROPERTY(EditAnywhere)
+	// double ForwardBound = 0.0;
+	// double ReverseBound = 0.0;
+
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	FVector PlatformVelocity = FVector(100, 0, 0);
+
+	FVector StartLocation;
+
 	UPROPERTY(EditAnywhere)
-	double ForwardBound = 0.0;
-	double ReverseBound = 0.0;
+	float DistanceFromStart;
+
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	float MoveBound = 100;
+
+
 
 };
